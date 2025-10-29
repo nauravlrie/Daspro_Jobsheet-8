@@ -5,9 +5,10 @@ public class NilaiKelompok11 {
         Scanner sc = new Scanner(System.in);
 
         int i = 1;
-        float totalNilai, rataNilai, nilai, rataRataTertinggi = 0, kelompokTertinggi = 0;
+        float totalNilai, rataNilai, nilai, rataRataTertinggi = 0;
+        String kelompokTertinggi = "";
 
-        while (i <= 6) {
+        while (i <= 3) {
             System.out.println("Kelompok " + i);
             totalNilai = 0;
 
@@ -18,8 +19,19 @@ public class NilaiKelompok11 {
             }
             rataNilai = totalNilai / 5;
             System.out.println("Rata-rata nilai Kelompok " + i + " = " + rataNilai);
+            
+            if (rataNilai > rataRataTertinggi) {
+                rataRataTertinggi = rataNilai;
+                kelompokTertinggi = "Kelompok " + i; ;
+            } else if (rataNilai == rataRataTertinggi) {
+                kelompokTertinggi += ", Kelompok " + i;
+            }
             i++;
-         } // belum dimodif
+
+         }
+
+          System.out.println("Nilai kelompok tertinggi adalah: " + rataRataTertinggi);
+          System.out.println("Kelompok yang mendapatkan nilai tertinggi adalah: " + kelompokTertinggi);
     }
     
 }
